@@ -1,0 +1,219 @@
+<include file="Public:header"/> 
+<!-- 发送站内信层 -->
+<div id="send_outer_div">
+<div class="infor_detail_2_div">
+	<table style="margin:10px;" width="96%;">
+		<tr><td align="center"><font size="20px" style="font-weight:bold;"><img src="__PUBLIC__/Images/icons/color/reply.png"/> 向<span class="send_user_name"></span>发送站内信</font></td><td align="right"><a onclick="close_send_mess_div()" href="#lose"/><img src="__IMG__/icons/close.png" width="25px" height="25px"/></a></td></tr>
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><textarea cols="53" class="send_mess_con" rows="6"></textarea></td></tr>
+		<tr><td colspan="2"><input type="hidden" class="send_mess_userid" value=""/></td></tr><!-- 将用户的ID放在这 -->
+		<tr><td colspan="2" align="center" class="send_mess_noti_info"></td></tr>
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><button onclick="send_button()">发送</button></td></tr>
+	</table>
+</div>
+</div>
+<!-- 显示处理结果层 -->
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<div class="wrapper">
+<div class="title"><h6>项目统计</h6></div>
+        <!-- Widgets -->
+        <div class="widgets">
+            <div class="oneTwo">  
+            	<!-- 网站数量统计 -->
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/stats.png" alt="" class="titleIcon" /><h6>最新数据</h6></div>
+                    <table cellpadding="0" cellspacing="0" width="100%" class="sTable">
+                        <thead>
+                            <tr>
+                                <td width="80">数量</td>
+                                <td>描述</td>
+                                <td width="80">近期增加</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center"><a href="#" title="" class="webStatsLink"><{$USERPERSONCOUNT}></a></td>
+                                <td>最近一个月</td>
+                                <td><span class="statsMinus">82.3%</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="#" title="" class="webStatsLink"><{$USERCOMPANYCOUNT}></a></td>
+                                <td>最近一周</td>
+                                <td><span class="statsPlus">0.32%</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="#" title="" class="webStatsLink"><{$USERPERSONCOUNT}></a></td>
+                                <td>今日招聘</td>
+                                <td><span class="statsMinus">82.3%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>   
+                </div>
+            
+            
+                <!-- 企业用户 -->
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/users.png" alt="" class="titleIcon" /><h6>企业列表 </h6></div>
+                    <ul class="partners">
+                    <volist name="USERCOMPANY" id="usercompany">
+                        <li>
+                            <a href="#" title="" class="floatL">
+                            <!-- 显示头像 -->
+	                            <eq name="usercompany.K_UserHeadAdd" value="">
+		                        	<img src="__ROOT__/Upload/Images/default_u.jpg" width="30px" height="30px"/>
+		                        <else/>
+		                        	<img src="__ROOT__/<{$usercompany.K_UserHeadAdd}>" width="30px" height="30px"/>
+		                        </eq>
+                            </a>
+                            <div class="pInfo">
+                                <a href="#" title=""><strong><{$usercompany.K_UserName}></strong></a>
+                                <i>
+                                <eq name="usercompany.K_UserIntroduce" value="">
+                                	暂无介绍
+                                <else/>
+                                	<{$usercompany.K_UserIntroduce|substr=0, 99}>
+                                </eq>
+                                </i>	
+                            </div>
+                            <div class="pLinks">
+                                <!-- <a href="#" title="Direct call" class="tipW"><img src="__IMG__/icons/pSkype.png" alt="" /></a> -->
+                               <a href="#send" onclick="send_message(<{$usercompany.K_UserId}>,'<{$usercompany.K_UserName}>')"><img src="__IMG__/icons/pEmail.png" alt="" /></a>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+            
+            
+                <!-- 个人用户 -->
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/users.png" alt="" class="titleIcon" /><h6>个人列表 </h6></div>
+                    <ul class="partners">
+                    <volist name="USERPERSON" id="userperson">
+                        <li>
+                            <a href="#" title="" class="floatL">
+                            <!-- 显示头像 -->
+	                            <eq name="userperson.K_UserHeadAdd" value="">
+		                        	<img src="__ROOT__/Upload/Images/default_u.jpg" width="30px" height="30px"/>
+		                        <else/>
+		                        	<img src="__ROOT__/<{$userperson.K_UserHeadAdd}>" width="30px" height="30px"/>
+		                        </eq>
+                            </a>
+                            <div class="pInfo">
+                                <a href="#" title=""><strong><{$userperson.K_UserName}></strong></a>
+                                <i>
+                                <eq name="userperson.K_UserIntroduce" value="">
+                                	暂无介绍
+                                <else/>
+                                	<{$userperson.K_UserIntroduce|substr=0, 99}>
+                                </eq>
+                                </i>	
+                            </div>
+                            <div class="pLinks">
+                                <!-- <a href="#" title="Direct call" class="tipW"><img src="__IMG__/icons/pSkype.png" alt="" /></a> -->
+                                <a href="#send" onclick="send_message(<{$userperson.K_UserId}>,'<{$userperson.K_UserName}>')"><img src="__IMG__/icons/pEmail.png" alt="" /></a>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        
+        	<!-- 2 columns widgets -->
+            <div class="oneTwo">
+            <!-- 搜索框 -->
+                <div class="searchWidget">
+                    <form action="#">
+                        <input type="text" name="search" placeholder="搜索用户..." />
+                        <input type="submit" name="find" value="" />
+                    </form>
+                </div>
+            <!--待激活用户 -->
+            <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/users.png" alt="" class="titleIcon" /><h6>待激活用户 </h6></div>
+                    <ul class="partners">
+                    <volist name="USERNEEDVERIFY" id="userneedverify">
+                        <li>
+                            <a href="#" title="" class="floatL">
+                            <!-- 显示头像 -->
+	                            <eq name="userneedverify.K_UserHeadAdd" value="">
+		                        	<img src="__ROOT__/Upload/Images/default_u.jpg" width="30px" height="30px"/>
+		                        <else/>
+		                        	<img src="__ROOT__/<{$userneedverify.K_UserHeadAdd}>" width="30px" height="30px"/>
+		                        </eq>
+                            </a>
+                            <div class="pInfo">
+                                <a href="#" title=""><strong><{$userneedverify.K_UserName}></strong></a>
+                                <i>
+                                <eq name="userneedverify.K_UserIntroduce" value="">
+                                	暂无介绍
+                                <else/>
+                                	<{$userneedverify.K_UserIntroduce|substr=0, 99}>
+                                </eq>
+                                </i>	
+                            </div>
+                            <div class="pLinks">
+                                <!-- <a href="#" title="Direct call" class="tipW"><img src="__IMG__/icons/pSkype.png" alt="" /></a> -->
+                                <a href="#send" onclick="send_message(<{$userneedverify.K_UserId}>,'<{$userneedverify.K_UserName}>')"><img src="__IMG__/icons/pEmail.png" alt="" /></a>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                <!-- 已限制登录的用户 -->
+                <div class="widget">
+                    <div class="title"><img src="__IMG__/icons/dark/users.png" alt="" class="titleIcon" /><h6>已屏蔽用户 </h6></div>
+                    <ul class="partners">
+                    <volist name="USERALSHIELD" id="useralshield">
+                        <li>
+                            <a href="#" title="" class="floatL">
+                            <!-- 显示头像 -->
+	                            <eq name="useralshield.K_UserHeadAdd" value="">
+		                        	<img src="__ROOT__/Upload/Images/default_u.jpg" width="30px" height="30px"/>
+		                        <else/>
+		                        	<img src="__ROOT__/<{$useralshield.K_UserHeadAdd}>" width="30px" height="30px"/>
+		                        </eq>
+                            </a>
+                            <div class="pInfo">
+                                <a href="#" title=""><strong><{$useralshield.K_UserName}></strong></a>
+                                <i>
+                                <eq name="useralshield.K_UserIntroduce" value="">
+                                	暂无介绍
+                                <else/>
+                                	<{$useralshield.K_UserIntroduce|substr=0, 99}>
+                                </eq>
+                                </i>	
+                            </div>
+                            <div class="pLinks">
+                                <!-- <a href="#" title="Direct call" class="tipW"><img src="__IMG__/icons/pSkype.png" alt="" /></a> -->
+                                <a href="#send" onclick="send_message(<{$useralshield.K_UserId}>,'<{$useralshield.K_UserName}>')"><img src="__IMG__/icons/pEmail.png" alt="" /></a>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+            
+                
+
+                
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    	
+    
+    </div>
+    <!-- Footer line -->
+</div>
+<div class="clear"></div>
+<include file="Public:footer"/>

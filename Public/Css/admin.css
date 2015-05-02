@@ -1,0 +1,171 @@
+/* CSS Document */
+@charset "utf-8";
+/*编辑各个模块中的 标题 长度的 输入框 的样式*/
+.form_input{
+	width:80%;
+	height:25px;
+	border-radius:2px;
+}
+.form_select{
+	width:20%;
+	height:30px;
+	border-radius:3px;
+}
+.form_select option{
+	height:20px;
+}
+
+
+
+/*   START  === 各模块列表中 点击删除具体信息时的弹窗样式*/
+#remove_outer_div{
+	background-color: black;
+    background-color: rgba(0, 0, 0, 0.60);        
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 150;
+    display: none;
+}
+#remove_inner_div{
+	background-color: #0099cc;
+    color: #ddd;
+    border: solid 1px #666666;  
+    box-shadow: 0px 1px 10px #222;
+    padding: 20px 10px 35px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 1510;
+    position: absolute;
+    margin-left: -15%;
+    width: 30%;
+    left: 50%;
+    top: 185px;
+}
+#remove_inner_div h2{
+	font-family:幼圆;
+	text-align:center;
+	font-size:18px;
+	font-weight:bolder;
+	color:white;
+}
+#remove_inner_div button{
+ 		margin: 10px 5px;
+        padding: 5px 10px;
+        text-align: center;
+        background:rgba(0, 0, 144, 0.1);
+        border: 1px solid #222;
+        border-radius: 1px;
+        color: white;
+        font-weight: bold;
+}
+#remove_inner_div button:hover {
+        background-color: #00bbee;
+        cursor: pointer;
+}
+
+/*  操作结果  */
+.res_operator{
+	display:none;
+	width:300px;
+	height:130px;
+	background-color: #0099cc;
+	position:absolute;
+	top:0;
+	left:500px;
+	z-index:1000;
+	color:white;
+	font-size:17px;
+	border:5px solid white;
+	box-shadow: 0px 1px 10px #222;
+	font-weight:bold;
+}
+.res_operator .res_word{
+	text-align:center;
+	line-height:100px;
+}
+
+/*   END  === 各模块列表中 点击删除具体信息时的弹窗样式*/
+
+/*
+*  START === 各模块列表中，  存在查看具体信息的 链接  弹窗样式
+*/
+.infor_detail_1_div{
+	width:500px;
+	height:500px;
+	background:white;
+	border:10px solid rgba(100, 0, 0, 0.1);
+	border-radius:10px;
+	position:absolute;
+	left:450px;
+	top:50px;
+	overflow:auto;
+}
+
+/*发送站内信层 样式*/
+#send_outer_div{
+	background-color: black;
+    background-color: rgba(0, 0, 0, 0.60);        
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 150;
+    display: none;
+}
+/*outer_div 包住的 div样式*/
+.infor_detail_2_div{
+	width:400px;
+	height:250px;
+	background:white;
+	border:10px solid rgba(100, 0, 0, 0.1);
+	border-radius:10px;
+	position:absolute;
+	left:450px;
+	top:150px;
+	overflow:auto;
+}
+
+
+/* 属于remove_outer_div 的衍生，当一个页面中如果出现多个 remove_outer_div 的时候，就使用这个 */
+#remove_outer_div1{
+	background-color: black;
+    background-color: rgba(0, 0, 0, 0.60);        
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 150;
+    display: none;
+}
+#remove_outer_div1 #remove_inner_div{
+	background-color: #0099cc;
+    color: #ddd;
+    border: solid 1px #666666;  
+    box-shadow: 0px 1px 10px #222;
+    padding: 20px 10px 35px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 1510;
+    position: absolute;
+    margin-left: -15%;
+    width: 30%;
+    left: 50%;
+    top: 185px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+<!-- 用户管理  index.html -->
+<include file="Public:header"/> 
+<!-- 显示具体用户信息  层 -->
+<div id="remove_outer_div">
+<div class="infor_detail_1_div">
+	<table width="96%" border="1" style="margin-top:3px;margin-left:10px;border:1px solid #EEE5DE;">
+	<tr><td colspan="2" align="center" class="load_user_infor"></td></tr>
+	<tr><td colspan="2" valign="top" align="center"><h2>基本信息</h2></td><td align="right"><a onclick="close_user_div()" href="#lose"/><img src="__IMG__/icons/close.png"/></a></td></tr>
+	<tr><td align="center" colspan="2"></td></tr>
+	<tr><td align="left" colspan="2" class="user_verify"></td></tr>
+	<tr><td><b>用户名</b></td><td class="user_name"></td></tr>
+	<tr><td><b>邮箱账号</b></td><td class="user_email"></td></tr>
+	<tr><td><b>注册时间</b></td><td class="user_reg_time"></td></tr>
+	<tr><td><b>上次登录</b></td><td class="user_land_time"></td></tr>
+	<tr><td><b>用户类别</b></td><td class="user_type"></td></tr>
+	<tr><td><b>用户积分</b></td><td class="user_integral"></td></tr>
+	<tr style="border-bottom:1px solid #EED2EE;">&nbsp;<td colspan="4"></td></tr>
+	<tr><td colspan="2"><br/></td></tr>
+	<tr><td colspan="2" valign="top" align="center"><h2>其他信息</h2></td></tr>
+	<tr><td><b>诞生日</b></td><td class="user_birthday"></td></tr>
+	<tr><td><b>联系电话</b></td><td class="user_phone"></td></tr>
+	<tr style="border-bottom:1px solid #EED2EE;"><td colspan="4">&nbsp;</td></tr>
+	<tr><td colspan="2"><br/></td></tr>
+	<tr><td colspan="2" align="center"><h2>自我介绍</h2></td></tr>
+	<tr><td colspan="2" class="user_introduce"></td></tr>
+	</table>
+</div>
+</div>
+<!-- 显示处理结果层 -->
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<!-- 发送站内信层 -->
+<div id="send_outer_div">
+<div class="infor_detail_2_div">
+	<table style="margin:10px;" width="96%;">
+		<tr><td align="center"><font size="20px" style="font-weight:bold;"><img src="__PUBLIC__/Images/icons/color/reply.png"/>向<span class="send_user_name"></span>发送站内信</font></td><td align="right"><a onclick="close_send_mess_div()" href="#lose"/><img src="__IMG__/icons/close.png" width="25px" height="25px"/></a></td></tr>
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><textarea cols="53" class="send_mess_con" rows="6"></textarea></td></tr>
+		<tr><td colspan="2"><input type="hidden" class="send_mess_userid" value=""/></td></tr><!-- 将用户的ID放在这 -->
+		<tr><td colspan="2" align="center" class="send_mess_noti_info"></td></tr>
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2" align="center"><button onclick="send_button()">发送</button></td></tr>
+	</table>
+</div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span><h6>联盟用户</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <td><img src="__IMG__/icons/tableArrows.png" alt="" /></td>
+                        <td width="100px">头像信息</td>
+                        <td width="150px">邮箱</td>
+                        <td width="100px">用户名</td>
+                        <td width="50px">用户类别</td>
+                        <td width="150px" class="sortCol"><div>注册时间<span></span></div></td>
+                        <td width="150px" class="sortCol">上次登录</td>
+                        <td width="70px" class="sortCol">登录次数</td>
+                    </tr>
+                </thead>
+                <tbody>
+                	<volist name="USERLIST" id="USER">
+	                	<tr onmousemove="news_show_div(this)" onmouseleave="news_hidden_div(this)">
+	                		<td><input type="checkbox" class="quantities_news_check" value="<{$NEWS.K_NewsId}>"/></td>
+	                        <td width="60px" align="center">
+	                        <eq name="USER.K_UserHeadAdd" value="">
+	                        	<img src="__ROOT__/Upload/Images/default_u.jpg" width="100px" height="100px"/>
+	                        <else/>
+	                        	<img src="__ROOT__/<{$USER.K_UserHeadAdd}>" width="100px" height="100px"/>
+	                        </eq>
+	                        </td>
+	                        <td align="center" width="60px"><{$USER.K_UserEmail}></td>
+	                        <td width="300px"><span class="news_edit" style="display:none;"><a href="#look" onclick="look_user(<{$USER.K_UserId}>)">查看该用户</a>  |
+	                        <eq name="USER.K_Shield" value="y">
+	                        	<a href="#del" onclick="edit_user_shield(<{$USER.K_UserId}>, this)">屏蔽该用户</a>
+	                        <else/>
+	                        	<a href="#del" onclick="edit_user_shield(<{$USER.K_UserId}>, this)">结束屏蔽该用户</a>
+	                        </eq>
+	                         | <a href="#send" onclick="send_message(<{$USER.K_UserId}>,'<{$USER.K_UserName}>')">发送站内信</a></span><{$USER.K_UserName}>
+	                        </td>
+	                        <td align="center" width="100px" ><div>
+	                        <eq name="USER.K_UserType" value="c">
+	                        	企业用户
+	                        <else/>
+	                        	个人用户
+	                       </eq>
+	                        <span></span></div></td>
+	                        <td align="center" class="sortCol"><{$USER.K_UserJoinTime}></td>
+	                        <td align="center" class="sortCol"><{$USER.K_UserLandTime}></td>
+	                        <td align="center" class="sortCol"><{$USER.K_UserLandTimes}></td>
+	                	</tr>
+                	</volist>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="itemActions">
+                                <a href="#quantitiesl_del" id="quantities_del" onclick="quantities_del()">屏蔽选中项</a>
+                            </div>
+                            <div class="tPagination">
+                                <ul>
+                                    <!-- <li class="prev"><a href="#" title=""></a></li> -->
+                                    <li><a href="#" title=""><{$PAGE}></a></li>
+                                    <!--<li><a href="#" title="">2</a></li>
+                                    <li><a href="#" title="">3</a></li>
+                                    <li><a href="#" title="">4</a></li>
+                                    <li><a href="#" title="">5</a></li>
+                                    <li><a href="#" title="">6</a></li>
+                                    <li>...</li>
+                                    <li><a href="#" title="">20</a></li>
+                                    <li class="next"><a href="#" title=""></a></li> -->
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+<include file="Public:footer"/>

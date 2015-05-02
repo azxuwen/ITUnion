@@ -1,0 +1,89 @@
+<!--开源项目-->
+<include file="Public:header"/> 
+<div id="remove_outer_div" style="">
+<div id="remove_inner_div">
+	<h2>确定删除吗?</h2>
+	<button id="yes_remove_product">确定</button><button onclick="close_remove_div()">不是的</button>
+</div>
+</div>
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<!-- 显示具体项目  层 -->
+<div id="remove_outer_div1">
+<div class="infor_detail_1_div" style="width:700px;left:300px;">
+	<table width="97%" border="1" style="margin-top:3px;margin-left:10px;border:1px solid #EEE5DE;">
+	<tr><td colspan="2" align="center" class="load_recruit_infor"></td></tr>
+	<tr><td colspan="2" valign="top" align="center"><h2>基本信息</h2></td><td align="right"><a onclick="close_recruit_detail()" href="#lose"/><img src="__IMG__/icons/close.png"/></a></td></tr>
+	<tr><td align="center" colspan="2"></td></tr>
+	<tr><td><strong>项目名称</strong></td><td class="project_name"></td></tr>
+	<tr><td><strong>合作企业</strong></td><td class="project_union"></td></tr>
+	<tr style="border-bottom:1px solid #EED2EE;">&nbsp;<td colspan="4"></td></tr>
+	<tr><td colspan="2"><br/></td></tr>
+	<tr><td colspan="2" align="center"><h2>具体内容</h2></td></tr>
+	<tr><td colspan="2" class="project_content"></td></tr>
+	</table>
+</div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span><h6>开源项目</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <td><img src="__IMG__/icons/tableArrows.png" alt="" /></td>
+                        <td width="60px">涉及行业</td>
+                        <td width="70px">图片展示</td>
+                        <td width="250px">项目标题</td>
+                        <td width="70px">创建者</td>
+                        <td width="150px">合作企业</td>
+                        <td width="50px">是否开源</td>
+                        <td width="80px" class="sortCol"><div>建立时间<span></span></div></td>
+                        <td width="80px">截止时间</td>
+                    </tr>
+                </thead>
+                <tbody>
+                	<volist name="PAGEPROJECT" id="PROJECT">
+	                	<tr onmousemove="news_show_div(this)" onmouseleave="news_hidden_div(this)">
+	                		<td><input type="checkbox" class="quantities_news_check" value="<{$PRODUCT.K_ProductId}>"/></td>
+	                        <td width="60px" align="center"><{$PROJECT.K_ProjectTrade}></td>
+	                        <td width="60px" align="center"><img src="__ROOT__/<{$PROJECT.K_ProjectView}>" width="50px" height="50px"/></td>
+	                        <td width="300px"><span class="news_edit" style="display:none;"><a href="#info" onclick="project_detail(<{$PROJECT.K_ProjectId}>)">详细信息</a> | <a href="#del" onclick="project_remove(<{$PROJECT.K_ProjectId}>)">删除</a></span><{$PROJECT.K_ProjectName}></td>
+	                        <td align="center" width="60px"><{$PROJECT.K_ProjectUserId}></td>
+	                        <td align="center" width="100px" class="sortCol"><div><{$PROJECT.K_ProjectUnion}>...<span></span></div></td>
+	                        <eq name="PROJECT.K_ProjectOpen" value='y'>
+	                        	<td align="center" width="50px" class="sortCol">是</td>
+	                        <else/>
+	                        	<td align="center" width="50px" class="sortCol">否</td>
+	                        </eq>
+	                        
+	                        <td align="center" width="50px" class="sortCol"><{$PROJECT.K_ProjectStartTime|substr=0, 10}></td>
+	                        <td align="center" class="sortCol"><{$PROJECT.K_ProjectEndTime|substr=0, 10}></td>
+	                	</tr>
+                	</volist>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="9">
+                            <div class="itemActions">
+                                <a href="#quantitiesl_del" id="quantities_del" onclick="quantities_del()">删除选中项</a>
+                            </div>
+                            <div class="tPagination">
+                                <ul>
+                                    <!-- <li class="prev"><a href="#" title=""></a></li> -->
+                                    <li><a href="#" title=""><{$PAGE}></a></li>
+                                    <!--<li><a href="#" title="">2</a></li>
+                                    <li><a href="#" title="">3</a></li>
+                                    <li><a href="#" title="">4</a></li>
+                                    <li><a href="#" title="">5</a></li>
+                                    <li><a href="#" title="">6</a></li>
+                                    <li>...</li>
+                                    <li><a href="#" title="">20</a></li>
+                                    <li class="next"><a href="#" title=""></a></li> -->
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+<include file="Public:footer"/>

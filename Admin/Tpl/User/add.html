@@ -1,0 +1,26 @@
+<include file="Public:header"/> 
+<div class="widget">
+            <div class="title"><span class="titleIcon"><img src="__IMG__/icons/color/pencil.png"/></span><h6>注册用户</h6></div>
+            <form name="r_form" id="admin_form" class='kindform' method="post"  enctype='multipart/form-data' action="__APP__/News/control_edit/n_id/<{$NEWSID}>">
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <tbody>
+                	<tr><td align="right">资讯标题</td><td><input class="form_input" type="text" name="news_title" value="<{$NEWSTITLE}>"/></td></tr>
+                	<tr><td align="right">资讯类别</td><td>
+                	<!-- 处理新闻类别 -->
+                	<select name="news_cate" class="form_select">
+                	<volist name="NEWSCATES" id="CATE">
+                		<eq name="NEWSCATE" value="$CATE.CodeId" >
+                			<option value="<{$CATE.CodeId}>" selected="selected">--<{$CATE.CodeName}>--</option>
+                		<else/>
+                			<option value="<{$CATE.CodeId}>">--<{$CATE.CodeName}>--</option>
+                		</eq>
+                	</volist>
+                	</select>
+                	</td></tr>
+                	<tr><td align="right">资讯内容</td><td><textarea name="content1" id="KindEditor" style="width:820px;height:500px;visibility:hidden;"><{$NEWSCON}></textarea></td></tr>
+                	<tr><td colspan="2" align="center"><input type="button" name="news_edit_button" onclick="news_edit_click()" value="提交修改" /></td></tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+<include file="Public:footer"/>

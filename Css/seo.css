@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+#fit_body_center_90{
+	width:90%;
+	border:1px solid white;
+	margin:0 auto;
+}
+#fit_body_70_float {
+	margin-top:5px;
+	margin-left:10px;
+	width:70%;
+	border:1px solid white;
+	float:left;
+
+	background:white;
+	-webkit-box-shadow: #666 -3px 2px 3px;
+	-moz-box-shadow: #666 -3px 2px 3px;
+	box-shadow: #666 -3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+#fit_body_30_float{
+	margin-top:5px;
+	margin-left:20px;
+	width:22.5%;
+	border:1px solid white;
+	float:left;
+	height:1000px;
+	background:white;
+	-webkit-box-shadow: #666 3px 2px 3px;
+	-moz-box-shadow: #666 3px 2px 3px;
+	box-shadow: #666 3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+#seo td{
+	margin-top:10px;
+	padding-left:20px;
+	padding-top:20px;
+	margin-bottom:20px;
+}
+#seo .time{
+	font: .7em Arial, Tahoma, Verdana;
+	color:gray;
+}
+#seo .content{
+	font: .8em Arial, Tahoma, Verdana;
+	color:black;
+}
+#seo a{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+}
+

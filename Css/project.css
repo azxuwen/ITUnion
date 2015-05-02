@@ -1,0 +1,214 @@
+@CHARSET "UTF-8";
+/*项目合作中的CSS代码*/
+#fit_body_center_90{
+	width:90%;
+	border:1px solid white;
+	margin:0 auto;
+}
+#fit_body_70_float{
+	margin-top:5px;
+	margin-left:10px;
+	width:70%;
+	border:1px solid white;
+	float:left;
+	background:white;
+	-webkit-box-shadow: #666 -3px 2px 3px;
+	-moz-box-shadow: #666 -3px 2px 3px;
+	box-shadow: #666 -3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+#fit_body_30_float{
+	margin-top:5px;
+	margin-left:20px;
+	width:30%;
+	border:1px solid white;
+	float:left;
+	height:1000px;
+	background:white;
+	-webkit-box-shadow: #666 3px 2px 3px;
+	-moz-box-shadow: #666 3px 2px 3px;
+	box-shadow: #666 3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+.center_title{
+	height:40px;
+	margin:3px;
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:25px;
+	font-weight:bolder;
+	color:black;
+	text-shadow: 0px 0px 0px #333;
+	/*border-bottom:1px solid rgba(211,211,232,0.4);*/
+}
+.time_vtimes{
+	height:30px;
+	margin:3px;
+	font-size:14px;
+	border-bottom:1px solid rgba(211,211,232,0.4);
+}
+/* blue */
+.blue1{
+	color:#d9eef7;
+	border:solid 1px #0076a3;
+	width:58px;
+	height:10px;
+	background:#0095cd;
+	background:-webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background:-moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.blue1:hover{
+	background:#007ead;
+	background:-webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background:-moz-linear-gradient(top,  #0095cc,  #00678e);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.blue1:active{
+	color:#80bed6;
+	background:-webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+	background:-moz-linear-gradient(top,  #0078a5,  #00adee);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+#p_con{
+	margin-top:15px;
+	font-size:14px;
+}
+.main_col{
+	width:100%;
+	height:40px;
+	background:rgba(211,211,232,1.00);
+	-webkit-box-shadow: #666 0px 2px 2px;
+	-moz-box-shadow: #666 0px px 2px;
+	box-shadow: #666 0px 2px 2px;
+}
+
+/*项目合作内容右侧的图片轮播start*/
+.slider-carousel{position:relative;width:270px;margin:10px auto 0 auto;height:200px;}
+.slider-carousel .item{height:300px;}
+.slider-carousel .item img{
+	position:relative;
+	left:-10px;
+	border:5px solid white;
+	-webkit-box-shadow: #666 0px 3px 3px;
+	-moz-box-shadow: #666 0px 3px 3px;
+	box-shadow: #666 0px 3px 3px;
+	behavior: url(/PIE.htc);
+}
+.slider-carousel .slidesjs-navigation{width:40px;height:42px;display:block;position:absolute;text-indent:-9999em;top:65px;z-index:100;opacity:0}/*左右箭头*/
+.slidesjs-previous{background:transparent url(images/prev.png) no-repeat;position:absolutely;top:-200px;zoom:1;}
+.slidesjs-next{background:transparent url(images/next.png) no-repeat;right:10px;zoom:1;}
+.slidesjs-pagination{overflow:hidden;zoom:1;margin-top:-25px;margin-left:260px;display:none;}
+.slidesjs-pagination-item a{float:left;width:16px;height:17px;text-indent:-9999em;margin-right:10px;background-color:#ade8d2;border-radius:20px}
+.slidesjs-pagination-item a:hover,.slidesjs-pagination-item a.active{background-color:#fff}
+/*企业下方的解释性文字*/
+.c_intro{
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	display:block;
+	width:270px;
+	height:30px;
+	padding:6px;
+	background:#000000; filter:alpha(Opacity=70); Opacity:0.6;
+	position:relative;
+	top:-85px;
+	left:9px;
+}
+/*项目合作内容右侧的图片轮播end*/
+/*推荐开源项目start*/
+#project {
+	color:black;
+	width:300px;
+	margin-top:5px;
+	margin-bottom:5px;
+	font: 18px/1.2 tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+	box-shadow: #666 0px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+#project a:hover{
+	text-decoration:none;
+}
+/*推荐开源项目end*/
+
+
+
+/*项目列表中的项目展示start*/
+#chanpinliebiao td{
+	margin-top:10px;
+	padding-left:20px;
+	padding-top:20px;
+	margin-bottom:20px;
+}
+#chanpinliebiao .time{
+	font: .7em Arial, Tahoma, Verdana;
+	color:gray;
+}
+#chanpinliebiao .content{
+	font: .8em Arial, Tahoma, Verdana;
+	color:black;
+}
+#chanpinliebiao a{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:25px;
+}
+/*项目列表中的项目展示end*/
+/*项目列表中下面分页start*/
+.fenye {
+	text-align:center;
+}
+.pageButton{
+	color:#EEEE00;
+	font-weight:bold;
+	border:solid 1px #CAE1FF;
+	width:60px;
+	height:10px;
+	border-radius:5px;
+	background:#A9A9A9;
+}
+/*项目列表中下面分页end*/
+
+/*添加新项目  start*/
+.trade{
+	margin-left:40px;
+	width:300px;
+	height:25px;
+	display:inline;
+}
+.trade_tag{
+	width:100px;
+	position:relative;
+	top:-10px;
+	height:20px;
+	color:white;
+	border:2px solid  #7A8B8B;
+	background: #A8A8A8;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+#user{
+	margin-left:40px;
+	width:300px;
+	height:25px;
+}
+/*添加新项目   end*/
+/*当修改招聘信息或者删除失败时，要返回原页面，这里写显示这个错误信息的样式start*/
+.error_infor {
+	height:10px;
+	margin:3px;
+	border:2px solid rgba(0,0,0,0.3);
+	background:rgba(255,255,0,0.3);
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:15px;
+	color:red;
+	text-shadow: 0px 0px 1px #333;
+	-webkit-box-shadow: #666 -3px 2px 3px;
+	-moz-box-shadow: #666 -3px 2px 3px;
+	box-shadow: #666 -3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+/*当修改招聘信息或者删除失败时，要返回原页面，这里写显示这个错误信息的样式end*/

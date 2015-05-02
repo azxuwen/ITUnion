@@ -1,0 +1,65 @@
+<include file="Public:header"/> 
+<div id="remove_outer_div" style="">
+<div id="remove_inner_div">
+	<h2>确定删除吗?</h2>
+	<button id="yes_remove_news">确定</button><button onclick="close_remove_div()">不是的</button>
+</div>
+</div>
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span><h6>联盟资讯</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <td><img src="__IMG__/icons/tableArrows.png" alt="" /></td>
+                        <td width="60px">置顶级别</td>
+                        <td width="70px">分类</td>
+                        <td width="500px">标题</td>
+                        <!-- <td width="200px" class="sortCol"><div>内容<span></span></div></td>-->
+                        <td width="30px" class="sortCol"><div>时间<span></span></div></td>
+                        <td width="50px">添加人</td>
+                        <td width="40px">浏览量</td>
+                    </tr>
+                </thead>
+                <tbody>
+                	<volist name="PAGENEWS" id="NEWS">
+	                	<tr onmousemove="news_show_div(this)" onmouseleave="news_hidden_div(this)">
+	                		<td><input type="checkbox" class="quantities_news_check" value="<{$NEWS.K_NewsId}>"/></td>
+	                        <td width="60px"><input type="text" style="width:30px;background:rgba(200,100, 30, 0.6);" value='<{$NEWS.K_NewsTop}>'/><a href="#up_top" onclick="up_news_top(<{$NEWS.K_NewsId}>, this)">修改</a></td>
+	                        <td align="center" width="60px"><{$NEWS.K_NewsCategory.CodeName}></td>
+	                        <td width="300px"><span class="news_edit" style="display:none;"><a href="__APP__/News/edit/n_id/<{$NEWS.K_NewsId}>">编辑</a> | <a href="#del" onclick="news_remove(<{$NEWS.K_NewsId}>)">删除</a></span><{$NEWS.K_NewsTitle}></td>
+	                        <!--  <td width="300px" class="sortCol"><div><{$NEWS.K_NewsContent|substr=0,99}><span></span></div></td>-->
+	                        <td align="center" width="100px" class="sortCol"><div><{$NEWS.K_NewsTime|substr=0,10}><span></span></div></td>
+	                        <td align="center" width="50px"><{$NEWS.K_ManagerId}></td>
+	                        <td align="center"><{$NEWS.K_NewsVisitTimes}></td>
+	                	</tr>
+                	</volist>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="itemActions">
+                                <a href="#quantitiesl_del" id="quantities_del" onclick="quantities_del()">删除选中项</a>
+                            </div>
+                            <div class="tPagination">
+                                <ul>
+                                    <!-- <li class="prev"><a href="#" title=""></a></li> -->
+                                    <li><a href="#" title=""><{$PAGE}></a></li>
+                                    <!--<li><a href="#" title="">2</a></li>
+                                    <li><a href="#" title="">3</a></li>
+                                    <li><a href="#" title="">4</a></li>
+                                    <li><a href="#" title="">5</a></li>
+                                    <li><a href="#" title="">6</a></li>
+                                    <li>...</li>
+                                    <li><a href="#" title="">20</a></li>
+                                    <li class="next"><a href="#" title=""></a></li> -->
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+<include file="Public:footer"/>

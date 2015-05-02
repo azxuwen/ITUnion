@@ -1,0 +1,63 @@
+<include file="Public:header"/> 
+<div id="remove_outer_div" style="">
+<div id="remove_inner_div">
+	<h2>确定删除吗?</h2>
+	<button id="yes_remove_product">确定</button><button onclick="close_remove_div()">不是的</button>
+</div>
+</div>
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span><h6>知识共享管理</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <td><img src="__IMG__/icons/tableArrows.png" alt="" /></td>
+                        <td width="60px">知识分类</td>
+                        <td width="70px">下载次数</td>
+                        <td width="300px">知识标题</td>
+                        <td width="70px">知识内容</td>
+                        <td width="50px">添加人</td>
+                        <td width="100px" class="sortCol"><div>上传时间<span></span></div></td>
+                    </tr>
+                </thead>
+                <tbody>
+                	<volist name="SHARELIST" id="sharelist">
+	                	<tr onmousemove="news_show_div(this)" onmouseleave="news_hidden_div(this)">
+	                		<td align="center"><input type="checkbox" class="quantities_news_check" value="<{$sharelist.K_ProductId}>"/></td>
+	                        <td width="60px"><{$sharelist.K_ShareCategory}></td>
+	                        <td width="60px" align="center"><{$sharelist.K_ShareDownTimes}></td>
+	                        <td width="300px"><span class="news_edit" style="display:none;"><a href="__APP__/share/down/s_id/<{$sharelist.K_ShareId}>">下载</a> | <a href="#del" onclick="share_remove(<{$sharelist.K_ShareId}>)">删除</a></span><{$sharelist.K_ShareTitle}></td>
+	                        <td align="center" width="60px"><{$sharelist.K_ShareContent|substr=0, 12}></td>
+	                        <td align="center" width="50px"><{$sharelist.K_ShareUserId}></td>
+	                        <td align="center" width="100px" class="sortCol"><div><{$sharelist.K_ShareTime|substr=0,10}><span></span></div></td>
+	                	</tr>
+                	</volist>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="itemActions">
+                                <a href="#quantitiesl_del" id="quantities_del" onclick="quantities_del()">删除选中项</a>
+                            </div>
+                            <div class="tPagination">
+                                <ul>
+                                    <!-- <li class="prev"><a href="#" title=""></a></li> -->
+                                    <li><a href="#" title=""><{$PAGE}></a></li>
+                                    <!--<li><a href="#" title="">2</a></li>
+                                    <li><a href="#" title="">3</a></li>
+                                    <li><a href="#" title="">4</a></li>
+                                    <li><a href="#" title="">5</a></li>
+                                    <li><a href="#" title="">6</a></li>
+                                    <li>...</li>
+                                    <li><a href="#" title="">20</a></li>
+                                    <li class="next"><a href="#" title=""></a></li> -->
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+<include file="Public:footer"/>

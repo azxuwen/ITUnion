@@ -1,0 +1,88 @@
+<include file="Public:header"/> 
+<div id="remove_outer_div" style="">
+<div id="remove_inner_div">
+	<h2>确定删除吗?</h2>
+	<button id="yes_remove_product">确定</button><button onclick="close_remove_div()">不是的</button>
+</div>
+</div>
+<!-- 显示具体用户信息  层 -->
+<div id="remove_outer_div1">
+<div class="infor_detail_1_div" style="width:700px;left:300px;">
+	<table width="97%" border="1" style="margin-top:3px;margin-left:10px;border:1px solid #EEE5DE;">
+	<tr><td colspan="2" align="center" class="load_recruit_infor"></td></tr>
+	<tr><td colspan="2" valign="top" align="center"><h2>基本信息</h2></td><td align="right"><a onclick="close_recruit_detail()" href="#lose"/><img src="__IMG__/icons/close.png"/></a></td></tr>
+	<tr><td align="center" colspan="2"></td></tr>
+	<tr><td><strong>招聘地点</strong></td><td class="recruit_location"></td></tr>
+	<tr><td><strong>招聘薪水</strong></td><td class="recruit_salary"></td></tr>
+	<tr><td><strong>学位要求</strong></td><td class="recruit_degree"></td></tr>
+	<tr style="border-bottom:1px solid #EED2EE;">&nbsp;<td colspan="4"></td></tr>
+	<tr><td colspan="2"><br/></td></tr>
+	<tr><td colspan="2" align="center"><h2>招聘要求</h2></td></tr>
+	<tr><td colspan="2" class="recruit_content"></td></tr>
+	</table>
+</div>
+</div>
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span><h6>人才管理</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <thead>
+                    <tr>
+                        <td><img src="__IMG__/icons/tableArrows.png" alt="" /></td>
+                        <td width="60px">置顶级别</td>
+                        <td width="70px">行业要求</td>
+                        <td width="250px">招聘标题</td>
+                        <td width="100px">招聘职位</td>
+                        <td width="50px">发布企业</td>
+                        <td width="50px">是否公开</td>
+                        <td width="50px">浏览次数</td>
+                        <td width="100px" class="sortCol"><div>发布时间<span></span></div></td>
+                    </tr>
+                </thead>
+                <tbody>
+                	<volist name="RECRUITLIST" id="recruitlist">
+	                	<tr onmousemove="news_show_div(this)" onmouseleave="news_hidden_div(this)">
+	                		<td align="center"><input type="checkbox" class="quantities_news_check" value="<{$recruitlist.K_ProductId}>"/></td>
+	                		<td width="60px"><input type='text' style="width:30px;background:rgba(200,100, 30, 0.6);" value='<{$recruitlist.K_RecruitOrder}>'/><a href="#up_top" onclick="up_recruit_top(<{$recruitlist.K_RecruitId}>, this)">修改</a></td>
+	                        <td width="60px"><{$recruitlist.K_RecruitTrade}></td>
+	                        <td width="300px"><span class="news_edit" style="display:none;"><a href="#" onclick="recruit_detail(<{$recruitlist.K_RecruitId}>)">详细信息</a> | <a href="#del" onclick="recruit_remove(<{$recruitlist.K_RecruitId}>)">删除</a></span><{$recruitlist.K_RecruitTitle}></td>
+	                        <td width="60px" align="center"><{$recruitlist.K_RecruitPosition}></td>
+	                        <td align="center" width="60px"><{$recruitlist.K_UserId}></td>
+	                        <eq name="recruitlist.K_RecruitVisible" value="Y">
+	                       	 	<td align="center" width="50px">公开</td>
+	                        	<else/>
+	                        	<td align="center" width="50px">未公开</td>
+	                        </eq>
+	                        <td align="center" width="50px"><{$recruitlist.K_RecruitVisitTimes}></td>
+	                        <td align="center" width="100px" class="sortCol"><div><{$recruitlist.K_RecruitTime|substr=0,10}><span></span></div></td>
+	                	</tr>
+                	</volist>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="9">
+                            <div class="itemActions">
+                                <a href="#quantitiesl_del" id="quantities_del" onclick="quantities_del()">删除选中项</a>
+                            </div>
+                            <div class="tPagination">
+                                <ul>
+                                    <!-- <li class="prev"><a href="#" title=""></a></li> -->
+                                    <li><a href="#" title=""><{$PAGE}></a></li>
+                                    <!--<li><a href="#" title="">2</a></li>
+                                    <li><a href="#" title="">3</a></li>
+                                    <li><a href="#" title="">4</a></li>
+                                    <li><a href="#" title="">5</a></li>
+                                    <li><a href="#" title="">6</a></li>
+                                    <li>...</li>
+                                    <li><a href="#" title="">20</a></li>
+                                    <li class="next"><a href="#" title=""></a></li> -->
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+<include file="Public:footer"/>

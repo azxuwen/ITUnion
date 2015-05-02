@@ -1,0 +1,63 @@
+<!-- 添加产品模板 -->
+<include file="Public:header"/> 
+<!-- 提示层 -->
+<div id="remove_outer_div" style="">
+<div id="remove_inner_div">
+	<h2>确定删除吗?</h2>
+	<button id="yes_remove_news">确定</button><button onclick="close_remove_div()">不是的</button>
+</div>
+</div>
+<!--处理结果层 -->
+<div class="res_operator">
+	<div class="res_word"></div>
+</div>
+<!-- 添加图片层 -->
+<div id="remove_outer_div1" style="">
+<div id="remove_inner_div">
+<form id="add_product_pic_form" enctype='multipart/form-data' action="__APP__/Product/add_pic/p_id/<{$PROID}>" method="post">
+<h2>添加产品图片</h2><br/>
+	<input type='file' id="add_product_pic_input" name="photo" value="未选择文件" /><br/><br/>
+	<input type='button' onclick="add_product_pic()"  value="提交图片"/>
+</form>
+</div>
+</div>
+<div class="widget">
+            <div class="title"><span class="titleIcon"><img src="__IMG__/icons/color/pencil.png"/></span><h6>产品添加</h6></div>
+            <form name="r_form" id="product_add_form" class='kindform' method="post"  enctype='multipart/form-data' action="__APP__/Product/control_add/">
+            <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+                <tbody>
+                	<tr><td align="right">产品标题</td><td><input class="form_input" type="text" id="product_title" name="product_title" value="<{$PROTITLE}>"/></td></tr>
+                	<tr><td align="right">产品类别</td><td>
+                	<!-- 处理新闻类别 -->
+                	<select name="product_cate" class="form_select">
+                	<volist name="PROCATE" id="CATE">
+                		<option value="<{$CATE.CodeId}>">--<{$CATE.CodeName}>--</option>
+                	</volist>
+                	</select>
+                	</td></tr>
+                	<tr><td align="right">所属企业</td><td><input class="form_input" type="text" id="INPUT_PRODUCT_COMPANY" name="product_company" value="<{$PROCOMPANY}>" readonly="readonly"/><br/>
+                		<input type="hidden" id="HIDDEN_PRODUCT_COMPANY" name="product_company_id" value="<{$PROCOMPANYID}>"/>
+                		<!-- START ===== 修改产品 所属 企业  -->
+                		<div id="upd_pro_user" style="">
+                			<input type='text' style="width:150px;height:25px;position:relative;left:30px;" id="select_company" onkeyup="input_select_company(this)"  placeholder="直接输入企业名称查找" />
+							<select class="company_list_select" onchange="change_select_company(this)">
+								<option value="88888">选择具体企业名称</option>
+								<volist name="COMPANY" id="company">
+								<option value="<{$company.K_UserId}>"><{$company.K_UserName}></option>
+								</volist>
+							</select>
+							<br/>
+							搜索到<div id="input_select_res" style="display:inline;font-size:23px;font-weight:bolder;">0</div>条结果
+						</div>
+                		<!-- END ===== 修改产品 所属 企业  -->
+                	</td></tr>
+                	<tr><td align="right">产品配图</td><td class="product_pic_td">
+                		<input type="file" name="photo[]" id="pro_pic" /><a href="#ad_new_pic_input" style="position:relative;left:200px;" onclick="add_new_pic_input()">[增加一幅图]</a><br/>
+                	</td></tr>
+                	<tr><td align="right">产品介绍</td><td><textarea name="content1" id="KindEditor" style="width:820px;height:300px;visibility:hidden;"><{$PROCON}></textarea></td></tr>
+                	<tr><td colspan="2" align="center"><input type="button" name="product_edit_button" onclick="product_add_click()" value="提交产品" /></td></tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+<include file="Public:footer"/>

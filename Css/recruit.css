@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* CSS Document */
+#fit_body_center_90{
+	width:90%;
+	border:1px solid white;
+	margin:0 auto;
+}
+#fit_body_70_float {
+	margin-top:5px;
+	margin-left:10px;
+	width:70%;
+	border:1px solid white;
+	float:left;
+
+	background:white;
+	-webkit-box-shadow: #666 -3px 2px 3px;
+	-moz-box-shadow: #666 -3px 2px 3px;
+	box-shadow: #666 -3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+.center_title{
+	height:40px;
+	margin:3px;
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:25px;
+	font-weight:bolder;
+	color:black;
+	text-shadow: 0px 0px 0px #333;
+	/*border-bottom:1px solid rgba(211,211,232,0.4);*/
+}
+.time_vtimes{
+	height:30px;
+	margin:3px;
+	font-size:14px;
+	border-bottom:1px solid rgba(211,211,232,0.4);
+}
+.center_title1 {
+	height:30px;
+	margin:20px;
+	padding:7px;
+	letter-spacing:2.5px;
+	font-size:15px;
+	font-weight:100;
+	text-shadow:0px 0px 0px #000000;
+}
+.main_col{
+	width:100%;
+	height:40px;
+	background:rgba(211,211,232,0.2);
+	-webkit-box-shadow: #666 0px 2px 2px;
+	-moz-box-shadow: #666 0px px 2px;
+	box-shadow: #666 0px 2px 2px;
+	behavior: url(/PIE.htc);
+}
+#zhiweixinxi {
+	margin-top:30px;
+	margin-left:30px;
+	width:90%;
+	border:0.5px solid #666;
+	border-spacing:0;
+	padding:7px;
+	text-align:center;
+}
+#zhiweixinxi td{
+	border-top:0.5px solid #666;
+	border-right:0.5px solid #666;
+	height:40px;
+	color:black;
+	font-size:15px;
+}
+#zhiweixinxi th {
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:left;
+}
+#zhaopinneirong {
+	margin-top:30px;
+	margin-left:30px;
+	width:90%;
+	height:80px;
+	border:0.5px solid #666;
+	padding:10px;
+	font: .8em Arial, Tahoma, Verdana;
+    color:black;
+}
+.hot {
+	height:20px;
+}
+#fit_body_30_float{
+	margin-top:5px;
+	margin-left:20px;
+	width:22.5%;
+	border:1px solid white;
+	float:left;
+	height:1000px;
+	background:white;
+	-webkit-box-shadow: #666 3px 2px 3px;
+	-moz-box-shadow: #666 3px 2px 3px;
+	box-shadow: #666 3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+.main_col{
+	width:100%;
+	height:40px;
+	background:rgba(211,211,232,1.00);
+	-webkit-box-shadow: #666 0px 2px 2px;
+	-moz-box-shadow: #666 0px px 2px;
+	box-shadow: #666 0px 2px 2px;
+	behavior: url(/PIE.htc);
+}
+
+/*最新招聘start*/
+#project {
+	color:black;
+	width:270px;
+	margin-top:5px;
+	margin-bottom:5px;
+	font: 18px/1.2 tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+	box-shadow: #666 0px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+#project a:hover{
+	text-decoration:none;
+}
+/*最新招聘end*/
+/* blue */
+.blue1{
+	color:#d9eef7;
+	border:solid 1px #0076a3;
+	width:58px;
+	height:10px;
+	background:#0095cd;
+	background:-webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background:-moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.blue1:hover{
+	background:#007ead;
+	background:-webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background:-moz-linear-gradient(top,  #0095cc,  #00678e);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.blue1:active{
+	color:#80bed6;
+	background:-webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+	background:-moz-linear-gradient(top,  #0078a5,  #00adee);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+.accept_insert_count_s{
+	margin-left:30px;
+}
+
+/*发布新职位页面 n_pr.php  start*/
+.n_pr_form{
+	border:1px solid rgba(211,211,232,1.0);
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+.n_pr_form td{
+	height:30px;
+	font-size:15px;
+	margin:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+	color:black;
+}
+.n_pr_form td input[type=text],
+.n_pr_form td input[type=file]{
+	padding:5px;
+	border:1px solid rgba(211,211,232,1.0);
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	width:565px;
+	height:25px;
+	margin-left:30px;
+}
+.n_pr_form td select{
+	padding:5px;
+	border:1px solid rgba(211,211,232,1.0);
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	height:30px;
+	width:180px;
+	margin-left:30px;
+}
+.n_pr_form td option{
+	height:20px;
+	font-size:13px;
+	color:black;
+}
+/*发布新职位页面 n_pr.php  end*/
+
+/*当修改招聘信息或者删除失败时，要返回原页面，这里写显示这个错误信息的样式start*/
+.error_infor {
+	height:10px;
+	margin:3px;
+	border:2px solid rgba(0,0,0,0.3);
+	background:rgba(255,255,0,0.3);
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:15px;
+	color:red;
+	text-shadow: 0px 0px 1px #333;
+	-webkit-box-shadow: #666 -3px 2px 3px;
+	-moz-box-shadow: #666 -3px 2px 3px;
+	box-shadow: #666 -3px 2px 3px;
+	behavior: url(/PIE.htc);
+}
+/*当修改招聘信息或者删除失败时，要返回原页面，这里写显示这个错误信息的样式end*/
+
+#chanpinliebiao td{
+	margin-top:10px;
+	padding-left:20px;
+	padding-top:20px;
+	margin-bottom:20px;
+}
+#chanpinliebiao .time{
+	font: .7em Arial, Tahoma, Verdana;
+	color:gray;
+}
+#chanpinliebiao .content{
+	font: .8em Arial, Tahoma, Verdana;
+	color:black;
+}
+#chanpinliebiao a{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:25px;
+}
+.fenye {
+	text-align:center;
+}
+.pageButton{
+	color:#EEEE00;
+	font-weight:bold;
+	border:solid 1px #CAE1FF;
+	width:60px;
+	height:10px;
+	border-radius:5px;
+	background:#A9A9A9;
+}
+
+/*招聘信息列表上方的解释性文字 如 我的招聘  他的招聘 那些字 start*/
+.recruit_title {
+	height:40px;
+	margin:3px;
+	padding-top:10px;
+	padding-bottom:0px;
+	font-size:25px;
+	font-weight:bolder;
+	color:black;
+	text-shadow: 0px 0px 0px #333;
+	border-bottom:1px solid #EED2EE;
+}
+/*招聘信息列表上方的解释性文字 如 我的招聘  他的招聘 那些字 end*/
+
+/*处理应聘信息的页面   start*/
+#recruit_accept_list{
+	border-spacing:0;
+	padding:7px;
+	text-align:center;
+}
+#recruit_accept_list td{
+	border:0.1px solid #EAEAEA;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+/*处理应聘信息的页面   start*/
