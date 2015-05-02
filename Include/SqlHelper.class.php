@@ -3,7 +3,7 @@
    	var $conn;
    	var $dbname="itunion";  //数据库名称
    	var $username="root";	//数据库用户名
-   	var $userpass="";		//密码
+   	var $userpass="qmndmn521";		//密码
    	var $host="localhost";
    	
    	//构造函数
